@@ -1,0 +1,29 @@
+#post {
+    width: 100%;
+    outline: none;
+    border: none;
+}
+.col-md-7 #avatar-post{
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    border:1px solid black;
+    float:left;
+}
+.col-md-7 #icon-avatar{
+    padding-left:10px;
+    font-size:20px;
+    margin-top:8px;
+}
+.col-md-7 #icon-user{
+    padding-left:7px;
+    font-size:18px;
+    margin-top:7px;
+}
+.col-md-7 #box-icon{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    border:1px solid black;
+    float:left;
+}
