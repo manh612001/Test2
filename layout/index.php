@@ -72,6 +72,9 @@
                             echo'
                             <div class="dropdown  float-right">
                               <button type="button" class="btn dropdown-toggle " data-toggle="dropdown"></button>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" href="editpost.php?id='.$value['Id'].'">Chỉnh sửa</a>
+                              </div>
                             </div>';
                           }
                           echo'

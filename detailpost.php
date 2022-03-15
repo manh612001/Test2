@@ -22,19 +22,20 @@
               <div class="mb-2" >
                   <div class="media border p-3" >
                   <img src="./upload/images.png" class="mr-3 mt-1 rounded-circle" style="width:60px; height:60px;">
-                      <div class="media-body">
-                          <div class="dropdown  float-right">
-                              <button type="button" class="btn dropdown-toggle " data-toggle="dropdown">
-                              </button>
-                              <div class="dropdown-menu">
-                                  <a href ="editpost.php?id='.$value['Id'].'"><button  class="dropdown-item  ">chỉnh sửa</button></a>
-                                  <button  class="dropdown-item  " data-toggle="modal" data-target="#editpost">Xoá</button>
-                              </div>';
+                      <div class="media-body">';
+                          if($value['User_id']==$rs)
+                          {
+                            echo '
+                                <div class="dropdown  float-right">
+                                    <button type="button" class="btn dropdown-toggle " data-toggle="dropdown">
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a href ="editpost.php?id='.$value['Id'].'"><button  class="dropdown-item  ">chỉnh sửa</button></a>
+                                    </div>';
+                          }
                               $s = "select * from post where Id = ".$value['Id']."";
                               $d = executeResult($s);
-                              
                       echo'    
-                      </div>
                           <h4>'.$value['Name'].'</h4>
                           <h6><small><i>Ngày đăng: '.$value['Created_at'].'</i></small></h6>
                           <p style="font-size:30px;">'.$value['Content'].'</p>
