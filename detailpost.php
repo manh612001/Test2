@@ -31,7 +31,8 @@
                                     </button>
                                     <div class="dropdown-menu">
                                         <a href ="editpost.php?id='.$value['Id'].'"><button  class="dropdown-item  ">chỉnh sửa</button></a>
-                                    </div>';
+                                    </div>
+                                </div>';
                           }
                               $s = "select * from post where Id = ".$value['Id']."";
                               $d = executeResult($s);
@@ -68,4 +69,17 @@
                   </div>
               </div>';
           }
+    if(!empty($_POST['cmt'])){
+        $content = getPOST('cmt');
+        $id_post = getPOST('id-post');
+        $id_user = getPOST('id-user');
+        if(empty($content)){
+            echo"<script>alert('Vui lòng điền đầy đủ thông tin')</script>";
+        }
+        else{
+            $sql="insert into comments (Id_post,Id_user,Content) values('$id_post','$id_user','$content')";
+            execute($sql); 
+            die(); 
+        }
+    }
 ?>

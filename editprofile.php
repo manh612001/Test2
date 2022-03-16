@@ -5,11 +5,13 @@
     $user = getToken();
     $rs = $user['Id'];
     $role = $user['Role'];
-    $name = $user['Name'];
-    $pw = $user['Password'];
-    $email = $user['Email'];
     $sql = "select * from User where Id ='$rs'"; 
     $data = executeResult($sql);
+    foreach($data as $value){
+        $name = $value['Name'];
+        $email = $value['Email'];
+        $pw = $value['Password'];
+    }
     if(strtolower($role)=='admin'){
         require_once('./layoutAdmin/header.php');
     }
